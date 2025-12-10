@@ -20,26 +20,27 @@
 // 3. Add a switch statement for different species responses
 // 4. Use template literals to make the strings prettier
 
-// function generateProfile(name, age, species) {
-//   // VALIDATION FIRST - check for bad inputs before doing anything
-//   if (age < 0) {
-//     return `❌ Error: Age cannot be negative! Please enter a valid age.`;
-//   }
-
-const generateProfile = (name, age, species) => {
+function generateProfile(name, age, species) {
+  // VALIDATION FIRST - check for bad inputs before doing anything
   if (age < 0) {
-    return `❌ Error: Age cannot be negative! Please enter a valid age.`;
+    return `Hey! Age cannot be negative! Please enter a valid age.`;
   }
 
-  if (species === dog) {
-    if (age > 11) {
-      returm`${name} is a ${age}-month-old puppy! Still growing strong! 🐕`;
+  // Now handle the logic
+  if (species === "dog") {
+    if (age <= 24) {
+      return `${name} is a ${age}-month-old puppy! Still growing strong! 🐕`;
     } else {
       return `${name} is a ${age}-month-old adult dog! Fully grown! 🐕`;
     }
-  } else if (species === human) {
-    return `${name} is a ${age}-year-old adult human! Living Life! 💙`;
+  } else if (species === "human") {
+    if (age <= 18) {
+      return `${name} is a ${age}-year-old young human! Growing up! 💙`;
+    } else {
+      return `${name} is a ${age}-year-old adult! Living life! 💙`;
+    }
   } else {
-    return `Sorry, I only know one human and two dogs. ✌`;
+    // Handle unknown species
+    return `Sorry, Unknown species "${species}". Please use "dog" or "human".`;
   }
-};
+}
