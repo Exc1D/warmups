@@ -5,7 +5,9 @@
 // Create a function copySorted(arr) that returns such a copy.
 
 let arr = ["HTML", "JavaScript", "CSS"];
-
+function copySorted(arr) {
+  return arr.slice().sort();
+}
 let sorted = copySorted(arr);
 
 alert(sorted); // CSS, HTML, JavaScript
