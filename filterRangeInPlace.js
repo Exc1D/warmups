@@ -16,9 +16,18 @@
 // except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
 
 function filterRangeInPlace(arr, a, b) {
-  arr.filter((num) => a <= num <= b);
+  let i = arr.length - 1;
+  while (i >= 0) {
+    let val = arr[i];
+
+    if (val < a || val > b) {
+      arr.splice(i, 1);
+    }
+
+    i--;
+  }
 }
 
 let arr = [5, 3, 8, 1];
 filterRangeInPlace(arr, 1, 4);
-console.log(arr);
+console.log(arr); // [3, 1]
