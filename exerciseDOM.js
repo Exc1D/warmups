@@ -1,5 +1,3 @@
-const { createElement } = require("react");
-
 // your JavaScript file
 const container = document.querySelector("#container");
 
@@ -15,10 +13,22 @@ redParagraph.textContent = "Hey I'm red!";
 container.appendChild(redParagraph);
 
 const blueHeader = document.createElement("h3");
-blueHeader.classList("blueHeader");
+blueHeader.classList.add("blueHeader");
 blueHeader.textContent = "I'm a blue H3!";
 container.appendChild(blueHeader);
 
-const newDiv = createElement("div");
+const newDiv = document.createElement("div");
 newDiv.classList.add("newDiv");
-newDiv.setAttribute("style", "border: 2px solid black; background: pink");
+newDiv.style.border = "2px solid black";
+newDiv.style.background = "pink";
+container.appendChild(newDiv);
+
+const divHeader = document.createElement("h1");
+divHeader.classList.add("divHeader");
+divHeader.textContent = "I'm in a div";
+newDiv.appendChild(divHeader);
+
+const divParagraph = document.createElement("p");
+divParagraph.classList.add("divParagraph");
+divParagraph.textContent = "ME TOO!";
+newDiv.appendChild(divParagraph);
